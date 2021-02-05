@@ -49,33 +49,36 @@ public class Ball : MonoBehaviour
     {
         if (hasStarted)
             {
-            float currentSpeed = Mathf.Sqrt(myRigidbody2D.velocity[0] * myRigidbody2D.velocity[0] + myRigidbody2D.velocity[1] * myRigidbody2D.velocity[1]);
-            float speedFactor = 1;
-            Debug.Log(currentSpeed);
-            if (currentSpeed <= minSpeed)
-            {
-                speedFactor = minSpeed / currentSpeed;
-                Debug.Log("too slow");
-            }
-            if( currentSpeed >= maxSpeed)
-            {
-                speedFactor = maxSpeed / currentSpeed;
-                Debug.Log("too fast");
-            }
-            Debug.Log("speedfactor: " + speedFactor);
-            Vector2 oldVelocity = myRigidbody2D.velocity;
-            Debug.Log("Old velocity: " + oldVelocity.ToString());
-            
-            Vector2 newVelocity = new Vector2(oldVelocity[0] * speedFactor, oldVelocity[1] * speedFactor);
-            Debug.Log("new velocity:" + newVelocity.ToString());
-            //myRigidbody2D.velocity = newVelocity;
-            Vector2 velocityTweak = new Vector2(Random.Range(-randomFaktor,randomFaktor),Random.Range(-randomFaktor,randomFaktor));
-
-
-            //GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity + new Vector2(1, 1);
+            float currentSpeed = myRigidbody2D.velocity.magnitude; 
+           
+            Vector2 velocityTweak = new Vector2(Random.Range(-randomFaktor,randomFaktor)*currentSpeed/maxSpeed,Random.Range(-randomFaktor,randomFaktor)*currentSpeed/maxSpeed);
+            myRigidbody2D.velocity += velocityTweak;
+            myRigidbody2D.velocity = new Vector2(myRigidbody2D.velocity.x * currentSpeed / myRigidbody2D.velocity.magnitude, myRigidbody2D.velocity.y * currentSpeed / myRigidbody2D.velocity.magnitude);
+           
             AudioClip clip = ballSounds[UnityEngine.Random.Range(0, ballSounds.Length)];
             myAudioSource.PlayOneShot(clip);
-            myRigidbody2D.velocity += velocityTweak;
+
         }
     }
+
+    private void FixedUpdate()
+    {
+        float speedFactor = 1;
+        float currentSpeed = myRigidbody2D.velocity.magnitude;
+        Debug.Log(currentSpeed);
+        if (currentSpeed <= minSpeed)
+        {
+            speedFactor = minSpeed / currentSpeed;
+        }
+        if (currentSpeed >= maxSpeed)
+        {
+            speedFactor = maxSpeed / currentSpeed;
+        }
+
+        Vector2 oldVelocity = myRigidbody2D.velocity;
+        Vector2 newVelocity = new Vector2(oldVelocity.x * speedFactor, oldVelocity.y * speedFactor);
+
+        myRigidbody2D.velocity = newVelocity;
+    }
+
 }
