@@ -8,6 +8,8 @@ public class Ball : MonoBehaviour
     [SerializeField] float yPush = 15f;
     [SerializeField] AudioClip[] ballSounds;
     [SerializeField] float randomFaktor = 0.2f;
+    [SerializeField] float maxSpeed = 10f;
+    [SerializeField] float minSpeed = 1f;
     Vector2 paddleToBallVector;
     AudioSource myAudioSource;
     Rigidbody2D myRigidbody2D;
@@ -45,9 +47,31 @@ public class Ball : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Vector2 velocityTweak = new Vector2(Random.Range(-randomFaktor,randomFaktor),Random.Range(-randomFaktor,randomFaktor));
         if (hasStarted)
-        {
+            {
+            float currentSpeed = Mathf.Sqrt(myRigidbody2D.velocity[0] * myRigidbody2D.velocity[0] + myRigidbody2D.velocity[1] * myRigidbody2D.velocity[1]);
+            float speedFactor = 1;
+            Debug.Log(currentSpeed);
+            if (currentSpeed <= minSpeed)
+            {
+                speedFactor = minSpeed / currentSpeed;
+                Debug.Log("too slow");
+            }
+            if( currentSpeed >= maxSpeed)
+            {
+                speedFactor = maxSpeed / currentSpeed;
+                Debug.Log("too fast");
+            }
+            Debug.Log("speedfactor: " + speedFactor);
+            Vector2 oldVelocity = myRigidbody2D.velocity;
+            Debug.Log("Old velocity: " + oldVelocity.ToString());
+            
+            Vector2 newVelocity = new Vector2(oldVelocity[0] * speedFactor, oldVelocity[1] * speedFactor);
+            Debug.Log("new velocity:" + newVelocity.ToString());
+            //myRigidbody2D.velocity = newVelocity;
+            Vector2 velocityTweak = new Vector2(Random.Range(-randomFaktor,randomFaktor),Random.Range(-randomFaktor,randomFaktor));
+
+
             //GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity + new Vector2(1, 1);
             AudioClip clip = ballSounds[UnityEngine.Random.Range(0, ballSounds.Length)];
             myAudioSource.PlayOneShot(clip);
