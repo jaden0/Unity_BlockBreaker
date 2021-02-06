@@ -8,6 +8,7 @@ public class GameSession : MonoBehaviour
     [SerializeField] int pointsPerBlockDestroyed = 10;
     [SerializeField] int currentScore = 0;
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] bool isAutoplayEnabled;
     // Start is called before the first frame update
 
 
@@ -44,6 +45,10 @@ public class GameSession : MonoBehaviour
     public void ResetGame()
     {
         Destroy(gameObject);
+    }
+    public bool IsAutoplayEnabled()
+    {
+        return isAutoplayEnabled;
     }
 }
 

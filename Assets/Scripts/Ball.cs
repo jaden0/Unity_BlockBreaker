@@ -53,7 +53,7 @@ public class Ball : MonoBehaviour
            
             Vector2 velocityTweak = new Vector2(Random.Range(-randomFaktor,randomFaktor)*currentSpeed/maxSpeed,Random.Range(-randomFaktor,randomFaktor)*currentSpeed/maxSpeed);
             myRigidbody2D.velocity += velocityTweak;
-            myRigidbody2D.velocity = new Vector2(myRigidbody2D.velocity.x * currentSpeed / myRigidbody2D.velocity.magnitude, myRigidbody2D.velocity.y * currentSpeed / myRigidbody2D.velocity.magnitude);
+            //myRigidbody2D.velocity = new Vector2(myRigidbody2D.velocity.x * currentSpeed / myRigidbody2D.velocity.magnitude, myRigidbody2D.velocity.y * currentSpeed / myRigidbody2D.velocity.magnitude);
            
             AudioClip clip = ballSounds[UnityEngine.Random.Range(0, ballSounds.Length)];
             myAudioSource.PlayOneShot(clip);
