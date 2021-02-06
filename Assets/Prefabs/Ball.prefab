@@ -232,12 +232,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paddle1: {fileID: 0}
-  xPush: 0
-  yPush: 5
+  xPush: 0.2
+  yPush: 3
   ballSounds:
   - {fileID: 8300000, guid: 99dc15bce0d1e4125a986bdd12087dfb, type: 3}
   - {fileID: 8300000, guid: bfddaf0b2cab94f07b67b4fe4112fe74, type: 3}
   - {fileID: 8300000, guid: ab8782efa85a84671aea2f6ef6a63d36, type: 3}
   randomFaktor: 1
-  maxSpeed: 1
-  minSpeed: 1
+  maxSpeed: 15
+  minSpeed: 2
