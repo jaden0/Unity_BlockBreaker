@@ -346,7 +346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6079263464484398876, guid: 367474406dedb4f84827a0a314b7e57b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.37
+      value: -5.91
       objectReference: {fileID: 0}
     - target: {fileID: 6079263464484398876, guid: 367474406dedb4f84827a0a314b7e57b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -849,7 +849,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6079263464484398876, guid: 367474406dedb4f84827a0a314b7e57b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.37
+      value: -5.91
       objectReference: {fileID: 0}
     - target: {fileID: 6079263464484398876, guid: 367474406dedb4f84827a0a314b7e57b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1498,7 +1498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6079263464484398876, guid: 367474406dedb4f84827a0a314b7e57b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.37
+      value: -5.91
       objectReference: {fileID: 0}
     - target: {fileID: 6079263464484398876, guid: 367474406dedb4f84827a0a314b7e57b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1613,6 +1613,14 @@ PrefabInstance:
     - target: {fileID: 652264679027481648, guid: 2b912f7e49ffd4631beb3435b32e3b70, type: 3}
       propertyPath: m_LocalPosition.z
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 652264679027481648, guid: 2b912f7e49ffd4631beb3435b32e3b70, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.422
+      objectReference: {fileID: 0}
+    - target: {fileID: 652264679027481648, guid: 2b912f7e49ffd4631beb3435b32e3b70, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9008706
       objectReference: {fileID: 0}
     - target: {fileID: 652264679645783628, guid: 2b912f7e49ffd4631beb3435b32e3b70, type: 3}
       propertyPath: m_IsActive
@@ -1796,6 +1804,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1471900600086866052, guid: 7109445c8d33c47c7b96a1a8d29c1774, type: 3}
+      propertyPath: orthographic size
+      value: 6.22631
+      objectReference: {fileID: 0}
     - target: {fileID: 1471900600086866054, guid: 7109445c8d33c47c7b96a1a8d29c1774, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -1815,7 +1827,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2624815882738697178, guid: a22fb63c1f8a04f28a4801ffd72dc229, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.25
+      value: 1.71
       objectReference: {fileID: 0}
     - target: {fileID: 2624815882738697178, guid: a22fb63c1f8a04f28a4801ffd72dc229, type: 3}
       propertyPath: m_LocalPosition.z
