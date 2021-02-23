@@ -9,7 +9,7 @@ public class Ball : MonoBehaviour
     [SerializeField] AudioClip[] ballSounds;
     [SerializeField] float randomFaktor = 0.2f;
     [SerializeField] float maxSpeed = 10f;
-    [SerializeField] float minSpeed = 1f;
+    //[SerializeField] float minSpeed = 1f;
     Vector2 paddleToBallVector;
     AudioSource myAudioSource;
     Rigidbody2D myRigidbody2D;
@@ -63,7 +63,7 @@ public class Ball : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float speedFactor = 1;
+        /* float speedFactor = 1;
         float currentSpeed = myRigidbody2D.velocity.magnitude;
         Debug.Log(currentSpeed);
         if (currentSpeed <= minSpeed)
@@ -78,7 +78,7 @@ public class Ball : MonoBehaviour
         Vector2 oldVelocity = myRigidbody2D.velocity;
         Vector2 newVelocity = new Vector2(oldVelocity.x * speedFactor, oldVelocity.y * speedFactor);
 
-        myRigidbody2D.velocity = newVelocity;
+        myRigidbody2D.velocity = newVelocity; */
     }
 
 }
