@@ -39,7 +39,8 @@ public class Paddle : MonoBehaviour
         }
         else
         {
-            return Input.mousePosition.x / Screen.width * ScreenWith;
+            //return Input.mousePosition.x / Screen.width * ScreenWith;
+            return Camera.main.ScreenToWorldPoint(Input.mousePosition)[0];
         }
     }
 
